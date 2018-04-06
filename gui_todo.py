@@ -3,14 +3,38 @@
 import Tkinter
 import random
 
-
 #Create root window
 root = Tkinter.Tk()
 
-# Create functions
+# Change root window bg colour
+root.configure(bg="white")
+
+# Create title
+root.title("Todo Helper")
+
+# Change window size
+root.geometry("250x600")
+
+#Create empty list
+tasks = []
+
+#List for testing
+tasks =["music","coding","create invoice", "tax return"]
+
+# Create functions:
+
+def update_listbox():
+    # clear the current listbox
+    clear_listbox()
+    # Populate listbox by appending each task to list
+    for task in tasks:
+        lb_tasks.insert("end", task)
+
+def clear_listbox():
+    lb_tasks.delete(0, "end")
 
 def add_task():
-    pass
+    update_listbox()
 
 def print_num_tasks():
     pass
